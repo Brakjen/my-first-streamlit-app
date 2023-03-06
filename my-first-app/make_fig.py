@@ -89,5 +89,4 @@ class WeightLoss:
 
 if __name__ == "__main__":
     wl = WeightLoss("data.xlsx")
-    print(wl.data)
     wl.plot()
