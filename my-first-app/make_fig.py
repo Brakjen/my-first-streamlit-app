@@ -1,4 +1,6 @@
 import datetime
+import shutil
+import os
 
 import numpy as np
 import pandas as pd
@@ -7,6 +9,12 @@ import matplotlib.dates as mdates
 mplot.style.use("dark_background")
 
 from scipy.optimize import curve_fit
+
+
+def fetch_data_file():
+    source = "/mnt/c/Users/andbra/OneDrive - Aker BP/Documents/09 Private/01 Vekt/data.xlsx"
+    shutil.copyfile(source, "data.xlsx")
+
 
 
 def linear_model(x, a, b):
@@ -88,5 +96,6 @@ class WeightLoss:
 
 
 if __name__ == "__main__":
+    fetch_data_file()
     wl = WeightLoss("data.xlsx")
     wl.plot()
